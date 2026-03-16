@@ -44,7 +44,7 @@ public class CartController {
 
     @ApiOperation("查询购物车列表")
     @GetMapping
-    public List<CartVO> queryMyCarts(){
+    public List<CartVO> queryMyCarts(@RequestHeader(value = "user-info",required = false) String userInfo){
         return cartService.queryMyCarts();
     }
     @ApiOperation("批量删除购物车中商品")

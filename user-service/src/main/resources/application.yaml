@@ -2,7 +2,7 @@ server:
   port: 8903
 spring:
   application:
-    name: cart-service
+    name: user-service
   profiles:
     active: dev
   cloud:

@@ -3,6 +3,8 @@ package com.hmall.cart.domain.po;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -33,7 +35,7 @@ public class Cart implements Serializable {
     private Long id;
 
     /**
-     * 用户id
+     * 用户 id
      */
     private Long userId;
 

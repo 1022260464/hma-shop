@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import springfox.documentation.spring.web.plugins.DefaultConfiguration;
 
 
-@MapperScan
+
 @MapperScan("com.hmall.cart.mapper")
 @SpringBootApplication
 @EnableFeignClients (basePackages = "com.hmall.api.client",defaultConfiguration = DefaultFeignConfig.class )

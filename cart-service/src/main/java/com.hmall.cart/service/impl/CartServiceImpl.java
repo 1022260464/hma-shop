@@ -13,6 +13,7 @@ import com.hmall.common.exception.BizIllegalException;
 import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
 import com.hmall.api.dto.ItemDTO;
+import com.hmall.common.utils.UserContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -46,8 +47,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     @Override
     public void addItem2Cart(CartFormDTO cartFormDTO) {
         // 1.获取登录用户
-//      Long userId = UserContext.getUser();
-        Long userId = 1L;
+      Long userId = UserContext.getUser();
         // 2.判断是否已经存在
         if(checkItemExists(cartFormDTO.getItemId(), userId)){
             // 2.1.存在，则更新数量
@@ -69,9 +69,8 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     @Override
    public List<CartVO> queryMyCarts() {
         // 1.查询我的购物车列表
-        //todo 临时写死1L
-//        List<Cart> carts = lambdaQuery().eq(Cart::getUserId, UserContext.getUser()).list();
-        List<Cart> carts = lambdaQuery().eq(Cart::getUserId, 1L).list();
+        List<Cart> carts = lambdaQuery().eq(Cart::getUserId, UserContext.getUser()).list();
+//        List<Cart> carts = lambdaQuery().eq(Cart::getUserId, 1L).list();
         if (CollUtils.isEmpty(carts)) {
             return CollUtils.emptyList();
         }
@@ -136,8 +135,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
         // 1.构建删除条件，userId和itemId
         QueryWrapper<Cart> queryWrapper = new QueryWrapper<Cart>();
         queryWrapper.lambda()
-//                .eq(Cart::getUserId, UserContext.getUser())
-                .eq(Cart::getUserId, 1L)
+                .eq(Cart::getUserId, UserContext.getUser())
                 .in(Cart::getItemId, itemIds);
         // 2.删除
         remove(queryWrapper);
