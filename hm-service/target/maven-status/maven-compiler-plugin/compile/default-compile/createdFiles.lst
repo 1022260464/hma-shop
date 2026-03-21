@@ -44,6 +44,7 @@ com\hmall\config\SecurityConfig.class
 com\hmall\enums\PayChannel.class
 com\hmall\mapper\OrderDetailMapper.class
 com\hmall\domain\po\Item.class
+com\hmall\service\impl\OrderDetailServiceImpl.class
 com\hmall\controller\PayController.class
 com\hmall\domain\po\Cart.class
 com\hmall\mapper\OrderMapper.class
@@ -61,4 +62,5 @@ com\hmall\controller\HelloController.class
 com\hmall\domain\dto\PayApplyDTO.class
 com\hmall\controller\OrderController.class
 com\hmall\mapper\OrderLogisticsMapper.class
+com\hmall\service\impl\CartServiceImpl.class
 com\hmall\controller\AddressController.class

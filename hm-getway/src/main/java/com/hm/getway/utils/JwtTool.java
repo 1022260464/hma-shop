@@ -4,7 +4,7 @@ import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTValidator;
 import cn.hutool.jwt.signers.JWTSigner;
 import cn.hutool.jwt.signers.JWTSignerUtil;
-import com.hmall.common.exception.UnauthorizedException;
+import com.hm.getway.exception.UnauthorizedException;
 import org.springframework.stereotype.Component;
 import java.security.KeyPair;
 import java.time.Duration;
